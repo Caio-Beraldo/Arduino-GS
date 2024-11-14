@@ -48,7 +48,8 @@ Pino analogico A0 e A1
 -LEDs (opcional):
 Conecte os LEDs com resistores em série aos pinos digitais conforme necessário para a sinalização visual.
 
-Instruções para Execução
+Instruções para Execução:
+
 -Baixe e instale o Arduino IDE.
 
 -Conecte o Arduino ao seu computador via cabo USB.
