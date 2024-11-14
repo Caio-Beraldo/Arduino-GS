@@ -24,11 +24,13 @@ Componentes Necessários
 - 1 x Servo
 - 2 x LDR
 
-Pré-requisitos
+Pré-requisitos:
+
 Software: Arduino IDE (versão mais recente)
 Bibliotecas necessárias: Nenhuma biblioteca externa necessária para este projeto.
 
-Montagem do Circuito
+Montagem do Circuito:
+
 -Painel Solar: Conecte os terminais do painel solar ao pino VIN e GND do Arduino para alimentação.
 
 -Sensor PIR:
