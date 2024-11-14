@@ -14,45 +14,46 @@ Funcionalidades
 
 Esquema do Circuito
 Componentes Necessários
-1 x Arduino Uno
-1 x Sensor PIR (infravermelho passivo)
-1 x Painel Solar
-1 x LED
-3 x Resistors (220 ohms e 10k ohms)
-1 x Protoboard
-Jumpers
-1 x Servo
-2 x LDR
+- 1 x Arduino Uno
+- 1 x Sensor PIR (infravermelho passivo)
+- 1 x Painel Solar
+- 1 x LED
+- 3 x Resistors (220 ohms e 10k ohms)
+- 1 x Protoboard
+- Jumpers
+- 1 x Servo
+- 2 x LDR
+
 Pré-requisitos
 Software: Arduino IDE (versão mais recente)
 Bibliotecas necessárias: Nenhuma biblioteca externa necessária para este projeto.
 
 Montagem do Circuito
-Painel Solar: Conecte os terminais do painel solar ao pino VIN e GND do Arduino para alimentação.
-Sensor PIR:
+-Painel Solar: Conecte os terminais do painel solar ao pino VIN e GND do Arduino para alimentação.
+-Sensor PIR:
 VCC: 5V (Arduino)
 GND: GND (Arduino)
 Pino digital 2 (Arduino)
-Servo:
+-Servo:
 VCC: 5V (Arduino)
 GND: GND (Arduino)
 Pino digital 6 (Arduino)
-LDRs
+-LDRs:
 GND: GND(Arduino)
 Pino analogico A0 e A1
 LEDs (opcional):
 Conecte os LEDs com resistores em série aos pinos digitais conforme necessário para a sinalização visual.
 
 Instruções para Execução
-Baixe e instale o Arduino IDE.
-Conecte o Arduino ao seu computador via cabo USB.
-Abra o Arduino IDE e cole o código abaixo em um novo arquivo.
-Selecione a placa Arduino Uno e a porta correta em "Ferramentas".
-Clique em Upload para enviar o código para o Arduino.
-Abra o Monitor Serial para visualizar as leituras dos sensores.
+-Baixe e instale o Arduino IDE.
+-Conecte o Arduino ao seu computador via cabo USB.
+-Abra o Arduino IDE e cole o código abaixo em um novo arquivo.
+-Selecione a placa Arduino Uno e a porta correta em "Ferramentas".
+-Clique em Upload para enviar o código para o Arduino.
+-Abra o Monitor Serial para visualizar as leituras dos sensores.
 
 Testando o Projeto
-Aproxime-se do sensor PIR para verificar a detecção de movimento e para acender e apagar o LED.
+-Aproxime-se do sensor PIR para verificar a detecção de movimento e para acender e apagar o LED.
 Varie a luminosidade dos LDRs e o Servo irá mudar de direção para que a placa solar possa reter o máximo de energia solar.
 
 Código
@@ -70,6 +71,8 @@ int margem = 10;
 #define led 12          
 bool ledligado = false; 
 #define pinPIR 2         
+
+
 void setup() {
   Serial.begin(9600);    
   myServo.attach(6);    
@@ -77,10 +80,14 @@ void setup() {
   pinMode(led, OUTPUT);  
   pinMode(pinPIR, INPUT); 
 }
+
+
 void loop() {
   leituraPainel = analogRead(painel);
   leituraD = analogRead(LDR2);
   leituraE = analogRead(LDR1);
+ 
+  
   if (leituraD > (leituraE + margem)) {
     posicao = posicao +1;
     if (posicao > 180) 
@@ -94,6 +101,8 @@ void loop() {
     myServo.write(posicao);
     delay(150);
   }
+  
+  
   if (leituraPainel < 400) {
     bool valorlido = digitalRead(pinPIR);
     if (valorlido == HIGH) {
@@ -105,6 +114,9 @@ void loop() {
       ledligado = !ledligado; 
       delay(2000); 
     }
+  
+  
+  
   } else {
     if (ledligado) {
       digitalWrite(led, LOW);
