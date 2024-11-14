@@ -64,15 +64,16 @@ Código
 Servo myServo;
 int LDR1 = A0;          
 int LDR2 = A1;         
-int painel = A2;       
-int leituraPainel = 0; 
-int leituraD = 0;      
-int leituraE = 0;       
+int solar = A2;       
+int leituraSolar = 0; 
+int Direita = 0;      
+int Esquerda = 0;       
 int posicao = 90;       
 int margem = 10;        
 #define led 12          
 bool ledligado = false; 
 #define pinPIR 2         
+
 
 
 void setup() {
@@ -83,29 +84,26 @@ void setup() {
   pinMode(pinPIR, INPUT); 
 }
 
-
 void loop() {
-  leituraPainel = analogRead(painel);
-  leituraD = analogRead(LDR2);
-  leituraE = analogRead(LDR1);
- 
+  leituraSolar = analogRead(solar);
+  Direita = analogRead(LDR2);
+  Esquerda = analogRead(LDR1);
+
   
-  if (leituraD > (leituraE + margem)) {
+  if (Direita > (Esquerda + margem)) {
     posicao = posicao +1;
     if (posicao > 180) 
     posicao = 180; 
     myServo.write(posicao);
     delay(150);
-  } else if (leituraE > (leituraD + margem)) {
+  } else if (Esquerda > (Direita + margem)) {
     posicao = posicao -1; 
     if (posicao < 0) 
     posicao = 0;
     myServo.write(posicao);
     delay(150);
   }
-  
-  
-  if (leituraPainel < 400) {
+  if (leituraSolar < 400) {
     bool valorlido = digitalRead(pinPIR);
     if (valorlido == HIGH) {
       if (ledligado) {
@@ -116,9 +114,6 @@ void loop() {
       ledligado = !ledligado; 
       delay(2000); 
     }
-  
-  
-  
   } else {
     if (ledligado) {
       digitalWrite(led, LOW);
