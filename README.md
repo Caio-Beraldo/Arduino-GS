@@ -50,17 +50,24 @@ Conecte os LEDs com resistores em série aos pinos digitais conforme necessário
 
 Instruções para Execução
 -Baixe e instale o Arduino IDE.
+
 -Conecte o Arduino ao seu computador via cabo USB.
+
 -Abra o Arduino IDE e cole o código abaixo em um novo arquivo.
+
 -Selecione a placa Arduino Uno e a porta correta em "Ferramentas".
+
 -Clique em Upload para enviar o código para o Arduino.
+
 -Abra o Monitor Serial para visualizar as leituras dos sensores.
 
 Testando o Projeto
+
 -Aproxime-se do sensor PIR para verificar a detecção de movimento e para acender e apagar o LED.
 Varie a luminosidade dos LDRs e o Servo irá mudar de direção para que a placa solar possa reter o máximo de energia solar.
 
 Código
+
 #include <Servo.h>
 
 Servo myServo;
