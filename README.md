@@ -54,7 +54,7 @@ Conecte os LEDs com resistores em série aos pinos digitais conforme necessário
 
 Testando o Projeto
 
--Aproxime-se do sensor PIR para verificar a detecção de movimento e para acender e apagar o LED.
+-Aproxime-se do sensor PIR para verificar a detecção de movimento e para acender e apagar o LED(Esse sistema só funcionará a noite).
 Varie a luminosidade dos LDRs e o Servo irá mudar de direção para que a placa solar possa reter o máximo de energia solar.
 
 Código
