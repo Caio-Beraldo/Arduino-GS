@@ -51,19 +51,6 @@ Pino analogico A0 e A1
 -LEDs (opcional):
 Conecte os LEDs com resistores em série aos pinos digitais conforme necessário para a sinalização visual.
 
-Instruções para Execução:
-
--Baixe e instale o Arduino IDE.
-
--Conecte o Arduino ao seu computador via cabo USB.
-
--Abra o Arduino IDE e cole o código abaixo em um novo arquivo.
-
--Selecione a placa Arduino Uno e a porta correta em "Ferramentas".
-
--Clique em Upload para enviar o código para o Arduino.
-
--Abra o Monitor Serial para visualizar as leituras dos sensores.
 
 Testando o Projeto
 
