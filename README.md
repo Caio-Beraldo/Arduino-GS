@@ -30,18 +30,22 @@ Bibliotecas necessárias: Nenhuma biblioteca externa necessária para este proje
 
 Montagem do Circuito
 -Painel Solar: Conecte os terminais do painel solar ao pino VIN e GND do Arduino para alimentação.
+
 -Sensor PIR:
 VCC: 5V (Arduino)
 GND: GND (Arduino)
 Pino digital 2 (Arduino)
+
 -Servo:
 VCC: 5V (Arduino)
 GND: GND (Arduino)
 Pino digital 6 (Arduino)
+
 -LDRs:
 GND: GND(Arduino)
 Pino analogico A0 e A1
-LEDs (opcional):
+
+-LEDs (opcional):
 Conecte os LEDs com resistores em série aos pinos digitais conforme necessário para a sinalização visual.
 
 Instruções para Execução
