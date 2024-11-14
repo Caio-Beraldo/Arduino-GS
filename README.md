@@ -27,6 +27,7 @@ Componentes Necessários
 Pré-requisitos:
 
 Software: Arduino IDE (versão mais recente)
+
 Bibliotecas necessárias: Nenhuma biblioteca externa necessária para este projeto.
 
 Montagem do Circuito:
