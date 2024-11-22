@@ -1,4 +1,7 @@
 # Arduino-GS
+Caio Costa Beraldo - RM560775
+Victor Kenzo Mikado- RM560057
+
 
 Sistema de Monitoramento com Arduino, Painel Solar e Sensores
 
